@@ -4,7 +4,7 @@ from torch.nn import functional as F
 
 # hyperparameters
 batch_size = 32  # how many sequences processed in parallel
-block_size = 256  # context length fo predictions
+block_size = 256  # context length for predictions
 max_iters = 5000
 eval_interval = 300
 learning_rate = 3e-4
@@ -242,7 +242,3 @@ print(
         ].tolist()
     )
 )
-
-# we want x[b, t] = mean_{i<=t} x[b, i]
-B, T, C = 4, 8, 32  # batch, time, channels
-x = torch.randn(B, T, C)
